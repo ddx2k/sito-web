@@ -88,3 +88,40 @@ img {
     margin: 0 auto;
     object-fit: contain;
 }
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    h1 {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .munari, .mondadori, .clavicembalo {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 150px;
+    }
+
+    header {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 12px;
+    }
+}
