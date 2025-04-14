@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercitazione 2 Web Design</title>
+</head>
+<body>
+    <header>
+        <span id="battery-status">Battery: Loading...</span>
+        <span id="clock">Time: Loading...</span>
+    </header>
+    <script>
+        async function updateBatteryStatus() {
+            if ('getBattery' in navigator) {
+                const battery = await navigator.getBattery();
+                const update = () => {
+                    const level = Math.round(battery.level * 100);
+                    document.getElementById('battery-status').textContent = ` ${level}%`;
+                };
+                update();
+                battery.addEventListener('levelchange', update);
+            } else {
+                document.getElementById('battery-status').textContent = 'Battery: Not Supported';
+            }
+        }
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12 || 12;
+            const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')} ${ampm}`;
+            document.getElementById('clock').textContent = ` ${timeString}`;
+        }
+        updateBatteryStatus();
+        setInterval(updateClock, 1000);
+    </script>
+<h1>
+    filosofia del web design
+</h1>
+    <div class="munari">
+        <p>
+            Nel duemila la School of Visual Arts ha tolto la parola “grafica” dai suoi corsi. Resta il graphic design, ma il
+    metodo di Falcinelli per esplorare il design è la forma e la voce. Le riflessioni sul disegno delle interfacce sono
+    così articolate e vaste. graphic designer e web designer
+    Nel dizionario di Falcinelli “filosofia”, “graphic design” e “web design” sono usati in un senso esteso e in un
+    senso ristretto, arbitrariamente. Il web design, evoluto con HTML, è diventato in UE UX, UI e product designer.
+    blog e riviste web
+    Gli articoli web design sono votati al dettaglio tecnico del web design e al ruolo dell’autore inteso come design-
+    er. L’UX Collective ha aperto il progetto DOC per fare 1’esegesi del significato dei perché nella grafica. Manca
+    Web Usability di Jakob Nielsen, ma anche Don’t Make Me Think e The Elements of User Experience.
+    disagio tecnologico
+    Parlando di disagio tecnologico (1998), Cooper introduce l’“attrito cognitivo”, anticipando che il design sarà
+    sempre più funzionale e obiettivo oriented, e che la qualità sarà misurata sistematicamente, elità sulla linea di produzione.
+        </p>
+        <img src="falcinella.png">
+    </div>
+<div class="mondadori">
+    <p>
+    dao of web design
+Il Dao of Web Design (2000) di John Allsopp ha un’essenza polemica e programmatica e non trascura il problema del responsive web design, nel quale sono inquadrati gli obbiettivi di ciascuno. Per Allsopp il nuovo medium ha spesso imitato i predecessori, portando avanti la tesi che il controllo della tipografia e delle altre parti del design cartaceo non vale più e qui si presenta una maggiore flessibilità e una invenzione progettuale più diretta.
+web design typography
+Ha discusso, nel simposio, Oliver Reichenstein nel suo famoso articolo Web Design is 95\% Typography (2006), affermando che la tipografia è il novecento cinque per cento di un web design e i critici non mancano di argomentare che la tesi non fa che alzare al cimento le stesse questioni.
+understanding web
+La ricerca del web design di Jeffrey Zeldman del 2007 causa una serie di significati. La scrittrice spiega che il web design è la creazione di un ambiente digitale che faciliti il rapporto umano, si adatti ai diversi contenuti e ci racconti molte storie individuali.
+i am not a web designer
+Nel 2010 Jessica Hische ci apprende di non essere una web designer: spiega come il web design significhi conoscere tante cose e collaborare con gli sviluppatori, e che conoscere a menadito l’HT HL e il CSS non basta.
+</p>
+<img src="picci.png">
+</div>
+<div class="clavicembalo">
+<p>
+    what screens want
+Nel suo What Screens Want, Frank Chimero si ingegna a complicarci il problema della nostra non intelligenza
+verso lo schermo per dimostrare, a brani di cotone, che lo schermo, sebbene abbiam veduto e visto e vediamo
+sempre i contorni non è che un flusso continuo, per dare ragione degli strani intrecci di colori di Hockney.
+resilient web design
+Nel suo ebook Resilient Web Design dell’anno 2016, Jeremy Keith, esplora il nuovo valore del web design
+tenendo conto della migliore soluzione che preveda dal web design tradizionale, che pone l’operazione del designer, in confronto del mezzo, 2016 adattare il suo lancio alla varietà dei formati degli schermi, alla varianza della loro grandezza e alla diversità dei tempi richiesti dalla comunicazione.
+visual design is not a thing
+Mark Boulton scrive che il visual design è un vezzo: critica i neologi del web design e propone di chiamarlo
+pittura grafica d’arte perché il progettista di siti web non fa altro che il pittore, i messaggi e il pubblico si affer-
+mano, e deve conoscere le meccaniche del lavoro.
+atomic design
+Brad Frost riflette sulla composizione delle “pagine web” e le confina in una ripartizione di componenti.
+</p>
+<img src="libraccio.png">
+</div>
+<footer>
+    Daniele Greco Esercitazione 2 Web Design
+</footer>
+</body>
+</html>
